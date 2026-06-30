@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Local Apps
     'apps.common',
     'apps.authentication',
+    'apps.inventory',
 ]
 
 MIDDLEWARE = [
@@ -74,19 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database
+# Database - Using SQLite for development
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='fabric_erp_db'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default='password'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='5432'),
-        'CONN_MAX_AGE': 600,
-        'OPTIONS': {
-            'connect_timeout': 10,
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -178,7 +171,7 @@ AXES_ENABLED = True
 AXES_FAILURE_LIMIT = config('MAX_LOGIN_ATTEMPTS', default=5, cast=int)
 AXES_COOLOFF_TIME = config('ACCOUNT_LOCK_DURATION', default=15, cast=int)
 AXES_LOCK_OUT_AT_FAILURE = True
-AXES_USE_USER_AGENT = True
+AXES_USE_USER_AGENT = False
 AXES_LOCKOUT_URL = '/accounts/locked/'
 AXES_RESET_ON_SUCCESS = True
 
@@ -202,3 +195,9 @@ APP_VERSION = '1.0.0'
 
 # Remember Me Cookie
 REMEMBER_ME_AGE = 60 * 60 * 24 * 30  # 30 days
+
+# Authentication Backends
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
