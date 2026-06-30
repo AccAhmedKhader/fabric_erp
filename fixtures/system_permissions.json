@@ -1,0 +1,90 @@
+[
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000003",
+    "fields": {
+      "name": "Authentication",
+      "code": "auth",
+      "description": "Authentication and user management",
+      "is_system": true,
+      "order": 0
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000004",
+    "fields": {
+      "name": "Company",
+      "code": "company",
+      "description": "Company and branch management",
+      "is_system": true,
+      "order": 10
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000005",
+    "fields": {
+      "name": "Settings",
+      "code": "settings",
+      "description": "System settings",
+      "is_system": true,
+      "order": 20
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000006",
+    "fields": {
+      "name": "Accounting",
+      "code": "accounting",
+      "description": "Accounting module permissions",
+      "is_system": true,
+      "order": 30
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000007",
+    "fields": {
+      "name": "Inventory",
+      "code": "inventory",
+      "description": "Inventory management",
+      "is_system": true,
+      "order": 40
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000008",
+    "fields": {
+      "name": "Sales",
+      "code": "sales",
+      "description": "Sales management",
+      "is_system": true,
+      "order": 50
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000009",
+    "fields": {
+      "name": "Purchasing",
+      "code": "purchasing",
+      "description": "Purchasing management",
+      "is_system": true,
+      "order": 60
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000010",
+    "fields": {
+      "name": "HR",
+      "code": "hr",
+      "description": "Human resources",
+      "is_system": true,
+      "order": 70
+    }
+  }
+]

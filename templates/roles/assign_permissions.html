@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Assign Permissions - FabricERP{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-lg">
+                <div class="card-body p-4">
+                    <h3 class="text-center">Assign Permissions to {{ role.name }}</h3>
+                    <p class="text-muted text-center">Select permissions to assign to this role</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            {% for permission in permissions %}
+                            <div class="col-md-4 mb-2">
+                                <div class="form-check">
+                                    <input type="checkbox"
+                                           name="permissions"
+                                           value="{{ permission.id }}"
+                                           id="perm_{{ permission.id }}"
+                                           class="form-check-input"
+                                           {% if permission.id in assigned_permissions %}checked{% endif %}>
+                                    <label class="form-check-label" for="perm_{{ permission.id }}">
+                                        {{ permission.name }}
+                                        <small class="text-muted d-block">{{ permission.codename }}</small>
+                                    </label>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <div class="col-12 text-center text-muted">
+                                No permissions available
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="d-grid gap-2 mt-3">
+                            <button type="submit" class="btn btn-primary">Save Permissions</button>
+                            <a href="{% url 'authentication:role_list' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

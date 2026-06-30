@@ -1,0 +1,117 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+.env
+.env.local
+.env.development
+.env.production
+
+# Django
+*.log
+*.sqlite3
+db.sqlite3
+media/
+static/
+staticfiles/
+*.mo
+*.po
+*.pot
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+coverage.xml
+*.cover
+
+# Docker
+*.pid
+*.pid.lock
+
+# Logs
+logs/*.log
+
+# Uploads
+uploads/
+media/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Redis
+dump.rdb
+
+# Database backups
+*.bak
+*.dump
+
+# Secret files
+*.pem
+*.key
+*.crt
+
+# Node modules (if any)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython
+*.so
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# Django migrations
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Local settings
+core/settings/local.py

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}FabricERP - Welcome{% endblock %}
+{% block content %}
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-primary">
+ <div class="text-center text-white">
+ <img src="{% static 'images/logo.png' %}" alt="FabricERP" height="100" class="mb-4">
+ <h1 class="display-1 fw-bold">FabricERP</h1>
+ <p class="lead">Enterprise Accounting System for Textile & Garment Industry</p>
+ <div class="mt-5">
+ <a href="{% url 'authentication:login' %}" class="btn btn-light btn-lg px-5">Login</a>
+ </div>
+ <p class="mt-5 small">Version {{ app_version }} | {{ environment }}</p>
+ </div>
+</div>
+{% endblock %}

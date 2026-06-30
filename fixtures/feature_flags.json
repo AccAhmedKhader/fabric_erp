@@ -1,0 +1,68 @@
+[
+  {
+    "model": "common.featureflag",
+    "pk": "00000000-0000-0000-0000-000000000013",
+    "fields": {
+      "code": "multi_company",
+      "name": "Multi-Company Support",
+      "module": "system",
+      "description": "Enable multi-company features",
+      "status": "enabled",
+      "rollout_percentage": 100,
+      "environments": ["development", "production"]
+    }
+  },
+  {
+    "model": "common.featureflag",
+    "pk": "00000000-0000-0000-0000-000000000014",
+    "fields": {
+      "code": "multi_branch",
+      "name": "Multi-Branch Support",
+      "module": "system",
+      "description": "Enable multi-branch features",
+      "status": "enabled",
+      "rollout_percentage": 100,
+      "environments": ["development", "production"]
+    }
+  },
+  {
+    "model": "common.featureflag",
+    "pk": "00000000-0000-0000-0000-000000000015",
+    "fields": {
+      "code": "audit_logging",
+      "name": "Audit Logging",
+      "module": "system",
+      "description": "Enable detailed audit logging",
+      "status": "enabled",
+      "rollout_percentage": 100,
+      "environments": ["development", "production"]
+    }
+  },
+  {
+    "model": "common.featureflag",
+    "pk": "00000000-0000-0000-0000-000000000016",
+    "fields": {
+      "code": "advanced_reporting",
+      "name": "Advanced Reporting",
+      "module": "reports",
+      "description": "Enable advanced reporting features",
+      "status": "beta",
+      "rollout_percentage": 20,
+      "environments": ["development"]
+    }
+  },
+  {
+    "model": "common.featureflag",
+    "pk": "00000000-0000-0000-0000-000000000017",
+    "fields": {
+      "code": "api_access",
+      "name": "API Access",
+      "module": "system",
+      "description": "Enable REST API access",
+      "status": "enabled",
+      "rollout_percentage": 100,
+      "environments": ["development", "production"],
+      "require_staff": true
+    }
+  }
+]

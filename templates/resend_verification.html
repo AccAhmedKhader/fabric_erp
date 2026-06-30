@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Resend Verification - FabricERP{% endblock %}
+
+{% block content %}
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div class="card shadow-lg" style="width: 400px;">
+        <div class="card-body p-5">
+            <h3 class="text-center">Resend Verification</h3>
+            <p class="text-muted text-center">Enter your email to receive a new verification link</p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Verification Link</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="{% url 'authentication:login' %}" class="text-decoration-none">Back to Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

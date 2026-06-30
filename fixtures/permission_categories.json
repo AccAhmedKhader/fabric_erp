@@ -1,0 +1,24 @@
+[
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000011",
+    "fields": {
+      "name": "Reports",
+      "code": "reports",
+      "description": "Reports and analytics",
+      "is_system": true,
+      "order": 80
+    }
+  },
+  {
+    "model": "authentication.permissioncategory",
+    "pk": "00000000-0000-0000-0000-000000000012",
+    "fields": {
+      "name": "System",
+      "code": "system",
+      "description": "System administration",
+      "is_system": true,
+      "order": 90
+    }
+  }
+]

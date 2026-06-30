@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Role - FabricERP{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-danger">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-exclamation-triangle text-danger" style="font-size: 4rem;"></i>
+                    <h3 class="mt-3 text-danger">Confirm Delete</h3>
+                    <p class="text-muted">
+                        Are you sure you want to delete role <strong>{{ role.name }}</strong>?
+                        This action cannot be undone.
+                    </p>
+                    {% if role.is_system %}
+                        <div class="alert alert-warning">
+                            <i class="bi bi-info-circle"></i>
+                            This is a system role and cannot be deleted.
+                        </div>
+                    {% else %}
+                        <div class="d-grid gap-2">
+                            <form method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger w-100">Delete Role</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                    <a href="{% url 'authentication:role_list' %}" class="btn btn-secondary w-100 mt-2">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

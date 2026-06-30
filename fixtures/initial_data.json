@@ -1,0 +1,31 @@
+[
+  {
+    "model": "common.company",
+    "pk": "00000000-0000-0000-0000-000000000001",
+    "fields": {
+      "name": "FabricERP Default Company",
+      "legal_name": "FabricERP Solutions",
+      "tax_id": "0000000000",
+      "commercial_register": "0000000",
+      "industry": "textile",
+      "country": "Egypt",
+      "currency": "EGP",
+      "is_active": true,
+      "is_verified": true,
+      "subscription_status": "active"
+    }
+  },
+  {
+    "model": "common.branch",
+    "pk": "00000000-0000-0000-0000-000000000002",
+    "fields": {
+      "company": "00000000-0000-0000-0000-000000000001",
+      "name": "Headquarters",
+      "code": "HQ",
+      "branch_type": "hq",
+      "is_headquarters": true,
+      "is_active": true,
+      "country": "Egypt"
+    }
+  }
+]
