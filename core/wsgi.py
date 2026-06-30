@@ -1,13 +1,13 @@
 """
-ASGI config for FabricERP project.
+WSGI config for FabricERP project.
 
-It exposes the ASGI callable as a module-level variable named ``application``.
+It exposes the WSGI callable as a module-level variable named ``application``.
 """
 
 import os
 
-from django.core.asgi import get_asgi_application
+from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings.development')
 
-application = get_asgi_application()
+application = get_wsgi_application()

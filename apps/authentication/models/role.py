@@ -70,7 +70,7 @@ class Role(models.Model):
             self.group = group
         else:
             # Sync group name if role name changed
-            if self.group.name != self.name:
+            if hasattr(self, 'group') and self.group and self.group.name != self.name:
                 self.group.name = self.name
                 self.group.save()
 
@@ -82,7 +82,8 @@ class Role(models.Model):
             raise ValidationError('System roles cannot be deleted.')
         group = self.group
         super().delete(*args, **kwargs)
-        group.delete()
+        if group:
+            group.delete()
 
     @classmethod
     def create_system_roles(cls):
@@ -126,10 +127,21 @@ class Role(models.Model):
         ]
 
         for role_data in system_roles:
-            cls.objects.get_or_create(
+            # Create or get group first
+            group, group_created = Group.objects.get_or_create(name=role_data['name'])
+            
+            # Create or get role with the group
+            role, role_created = cls.objects.get_or_create(
                 name=role_data['name'],
                 defaults={
+                    'group': group,
                     'description': role_data['description'],
                     'is_system': role_data['is_system'],
                 }
             )
+            
+            if not role_created:
+                # Update existing role if needed
+                role.description = role_data['description']
+                role.is_system = role_data['is_system']
+                role.save()
